@@ -1,0 +1,538 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.nav-links {
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    transition: transform 0.8s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+    transition: transform 0.8s ease-in-out;
+    margin-top: 20px;
+}
+
+.hero-section h1, .hero-section p {
+    position: relative;
+}
+
+/* Adding a transition effect */
+.hero-section:hover h1 {
+    transform: translateY(-20px);
+}
+
+.hero-section:hover p {
+    transform: translateY(20px);
+}
+
+/* Adding the background wavy effect */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    animation: wave 5s linear infinite;
+    z-index: -1;
+}
+
+/* Keyframe animation for wave */
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Reel Section */
+.short-reel {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+    color: #fff;
+    background-color: #111;
+}
+
+.reel-text {
+    font-size: 2em;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: #fff;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.reel-text:hover {
+    color: #ccc;
+}
+
+.short-reel-video {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.block-bg-cover {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mobile-reel {
+    display: none;
+}
+
+/* Add responsive design for mobile view */
+@media only screen and (max-width: 768px) {
+    .block-bg-cover {
+        height: 200px;
+    }
+    .mobile-reel {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .short-reel-video {
+        display: none;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+}
+
+.hero-section p {
+    font-size: 1.5em;
+}
+
+/* Global Projects Section */
+.global-projects {
+    padding: 80px 0;
+    background-color: #111;
+}
+
+.global-projects .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.global-projects .columns {
+    padding: 10px;
+}
+
+.project-image figure {
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.project-info h2 {
+    font-size: 1.8em;
+    margin-top: 20px;
+}
+
+.project-info .description-wrapper span {
+    font-size: 1em;
+    color: #888;
+}
+
+/* Clients Highlight Section */
+.clients-highlight {
+    padding: 60px 0;
+    background-color: #222;
+    text-align: left;
+}
+
+.clients-highlight .clients-logo {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+.clients-highlight .clients-logo li figure {
+    width: 150px;
+}
+
+.clients-highlight h2 {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.clients-highlight ul.services-list {
+    list-style: none;
+}
+
+.clients-highlight ul.services-list li {
+    margin-bottom: 30px;
+}
+
+.clients-highlight ul.services-list li span {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.clients-highlight ul.services {
+    list-style: none;
+}
+
+.clients-highlight ul.services li {
+    font-size: 1.2em;
+    margin-left: 15px;
+    color: #aaa;
+}
+
+/* Additional global projects and culture highlight sections */
+
+/* Add media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .global-projects .row {
+        flex-direction: column;
+    }
+    
+    .clients-highlight .clients-logo {
+        flex-direction: column;
+    }
+    
+    .clients-highlight .clients-logo li figure {
+        width: 100px;
+        margin-bottom: 20px;
+    }
+    
+    .clients-highlight ul.services-list li span {
+        font-size: 1.3em;
+    }
+    
+    .clients-highlight ul.services li {
+        font-size: 1em;
+    }
+}
+/* Culture Highlight Section */
+.culture-highlight {
+    padding: 50px 0;
+    background-color: #f4f4f4;
+}
+
+.culture-highlight h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.culture-highlight a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: none;
+    border-bottom: 1px solid #007bff;
+    padding-bottom: 4px;
+}
+
+.culture-highlight a:hover {
+    color: #0056b3;
+    border-bottom-color: #0056b3;
+}
+
+/* Highlight Project Section */
+.highlight-project {
+    margin-top: 50px;
+    position: relative;
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image-video .block-bg-cover video {
+    width: 100%;
+    height: auto;
+}
+
+.work-project {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.work-project h2, 
+.work-project h3 {
+    margin: 0;
+}
+
+.work-project button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #A18778;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.work-project button:hover {
+    background-color: #7a635b;
+}
+
+.home-projects__list_filters {
+    margin-top: 10px;
+}
+
+.home-projects__list_filters span {
+    display: inline-block;
+    background-color: #eee;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+/* CSS for .culture-highlight section */
+.culture-highlight {
+    background-color: #f7f7f7;
+    padding: 60px 0;
+}
+
+.culture-highlight h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.4;
+}
+
+.culture-highlight a {
+    font-size: 16px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.culture-highlight a:hover {
+    color: #004a99;
+}
+
+/* CSS for .highlight-project section */
+.highlight-project {
+    position: relative;
+    padding: 40px 0;
+}
+
+.project-image .block-bg-cover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-image video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.work-project {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.work-project h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+}
+
+.work-project h3 {
+    font-size: 18px;
+    color: #666;
+    font-weight: 400;
+}
+
+.work-project button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.work-project button:hover {
+    background-color: #444;
+}
+
+.home-projects__list_filters {
+    margin-top: 10px;
+}
+
+.home-projects__list_filters span {
+    display: inline-block;
+    background-color: #eee;
+    color: #666;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* CSS for .awww-conf section */
+.awww-conf {
+    background-color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.awww-conf img {
+    max-width: 100%;
+    height: auto;
+}
+
+.awww-conf svg {
+    width: 20px;
+    height: 28px;
+    fill: #333;
+}
+
+.awww-conf a:hover svg {
+    fill: #0066cc;
+}
+
+/* CSS for the global-projects section */
+.global-projects {
+    margin: 50px 0;
+}
+
+.global-projects__container {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.global-projects__container:hover {
+    transform: translateY(-5px);
+}
+
+.global-projects__container_wrapper {
+    position: relative;
+}
+
+.global-projects__container .project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.global-projects__container .project-info h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.global-projects__container .project-info span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Styles for high, mini-high, and second variations */
+.global-projects__container.high,
+.global-projects__container.mini-high {
+    height: 400px;
+}
+
+.global-projects__container.mini-high {
+    height: 300px;
+}
+
+.global-projects.second {
+    margin-top: 70px;
+}
